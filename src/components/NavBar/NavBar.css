@@ -1,0 +1,16 @@
+.nav-item {
+    @apply py-2.5 px-7 flex;
+}
+
+.nav-item > a {
+    @apply block mt-0.5;
+}
+
+.nav-container {
+    width: 170px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-item-active {
+    @apply bg-green-100 rounded-md font-semibold;
+}
