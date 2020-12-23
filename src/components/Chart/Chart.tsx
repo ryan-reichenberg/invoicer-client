@@ -17,6 +17,7 @@ export default class Chart extends Component<ChartProps> {
     componentDidMount() {
         if(!this.props.data) {
             console.error('No data passed through')
+            return;
         }
         const localChartRef : any = this.chartRef.current?.getContext('2d');
         new ChartJS(localChartRef, {
@@ -27,7 +28,7 @@ export default class Chart extends Component<ChartProps> {
     }
     render() {
         return (
-            <div className="w-full h-full">
+            <div className="w-full h-full relative">
                 <canvas id="chart" ref={this.chartRef}></canvas>
             </div>
         )

@@ -7,7 +7,7 @@ export default class NavBar extends Component {
 
     render() {
         return (
-            <div className="pt-9 ml-10">
+            <div className="pt-9 ml-10 mr-16">
                 <img src={logo} alt="logo" className='mb-20'/>
                 <ul className='nav-container'>
                     <li className='nav-item nav-item-active mb-7'>
