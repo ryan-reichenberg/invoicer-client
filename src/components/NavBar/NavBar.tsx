@@ -1,34 +1,21 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../logo.svg';
 import './NavBar.css';
 
 export default class NavBar extends Component {
-
     render() {
-        return (
+        return (      
             <div className="pt-9 ml-10 mr-16">
                 <img src={logo} alt="logo" className='mb-20'/>
-                <ul className='nav-container'>
-                    <li className='nav-item nav-item-active mb-7'>
-                        <Link to="/dashboard">Dashboard</Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to="/clients">Clients</Link>
-                    </li>
-                    <li className='nav-item mb-7'>
-                        <Link to="/shoelaces">Projects</Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to="/bubblegum">Invoices</Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to="/shoelaces">Contracts</Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to="/shoelaces">Expenses</Link>
-                    </li>
-                </ul>
+                <nav className='nav-container'>
+                    <NavLink to="/dashboard" className='nav-item mb-7' activeClassName='nav-item-active'>Dashboard</NavLink>
+                    <NavLink to="/clients"  className='nav-item' activeClassName='nav-item-active'>Clients</NavLink>
+                    <NavLink to="/projects" className='nav-item  mb-7' activeClassName='nav-item-active'>Projects</NavLink>
+                    <NavLink to="/invoices" className='nav-item' activeClassName='nav-item-active'>Invoices</NavLink>
+                    <NavLink to="/contracts" className='nav-item' activeClassName='nav-item-active'>Contracts</NavLink>
+                    <NavLink to="/expenses" className='nav-item' activeClassName='nav-item-active'>Expenses</NavLink>
+                </nav>
             </div>
         )
     }

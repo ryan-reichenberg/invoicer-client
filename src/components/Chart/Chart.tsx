@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Chart as ChartJS, ChartData, ChartOptions }  from 'chart.js';
-import  classes from './Chart.module.css';
+import './Chart.css'
 
 type ChartProps = {
     type: string,
@@ -28,8 +28,8 @@ export default class Chart extends Component<ChartProps> {
     }
     render() {
         return (
-            <div className="w-full h-full relative">
-                <canvas id="chart" ref={this.chartRef}></canvas>
+            <div className="relative w-full h-64">
+                <canvas id="chart" ref={this.chartRef} className='pb-4'></canvas>
             </div>
         )
     }
