@@ -5,14 +5,16 @@ import { Route, Router, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import Dashboard from './pages/dashboard/dashboard';
 import Login from './pages/login/login';
+import ActionBar from './components/ActionBar/ActionBar';
 
 
 function App() {
   const history = createBrowserHistory();
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row relative">
       <Router history={history}>
         <NavBar />
+        <ActionBar />
         <Switch>
           <Route exact path="/">
             <Login />

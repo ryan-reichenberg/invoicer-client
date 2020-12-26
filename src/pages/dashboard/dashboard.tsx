@@ -1,12 +1,11 @@
 import { ChartData, ChartOptions } from 'chart.js'
-import React, { Component } from 'react'
+import React from 'react'
 import Chart from '../../components/Chart/Chart'
 import Card from '../../components/Card/Card'
 import Table from '../../components/Table/Table'
 import Todo from 'src/components/Todo/Todo'
 
-export default class Dashboard extends Component {
-  render() {
+export const Dashboard = () => {
     const data: ChartData = {
       labels: ['Jan', 'Feb', 'Mar', 'Apr',  'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       datasets: [
@@ -76,9 +75,9 @@ export default class Dashboard extends Component {
           </div>
         <div className=''>
           <div className="mr-14">
-            <div className="flex justify-between">
+            <div className="flex justify-between mt-10">
               <div className='w-1/2'>
-                <h2 className="text-xl mt-10 mb-3">Expenses</h2>
+                <h2 className="text-xl mb-3">Expenses</h2>
                 <Card width={'w-full'} padding="pb-5 px-4 pt-5">
                   <div className="flex ml-2 mr-2 justify-between  pb-4">
                     <div className="flex items-center justify-center text-lg text-gray-700"><h2 className="font-semibold">Net Profit:</h2><span className="ml-2 font-light">$0</span></div>
@@ -88,7 +87,7 @@ export default class Dashboard extends Component {
                 </Card>
               </div>
               <div className='w-5/12'>
-                <h2 className="text-xl mt-11 mb-3">Deadlines</h2>
+                <h2 className="text-xl mb-3">Deadlines</h2>
                 <Card width={'w-full'} padding=" pr-4 pt-5 pb-9 pl-6">
                   <Todo />
                 </Card>
@@ -104,4 +103,4 @@ export default class Dashboard extends Component {
     </div>
   );
 }
-}
+export default Dashboard;
