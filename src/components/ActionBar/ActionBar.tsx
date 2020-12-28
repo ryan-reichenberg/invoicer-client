@@ -29,7 +29,7 @@ export default class ActionBar extends Component {
             },
         ]
         return (
-            <div  className='mt-2 mr-14 px-8 absolute top-0 right-0 flex items-center justify-center'>
+            <div  className='mt-4 lg:mt-6 mr-14 px-8 absolute top-0 right-0 flex items-center justify-center 2xl:mr-48'>
                 {/* <Button>New</Button> */}
                 {/* onSelect might need to change here. */}
                 <Dropdown toggleComponent={ToggleComponent} data={data} onSelect={(e: SyntheticEvent<any, Event>) => console.log(e.currentTarget.text)}/>

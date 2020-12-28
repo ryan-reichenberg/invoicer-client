@@ -28,8 +28,8 @@ export default class Chart extends Component<ChartProps> {
     }
     render() {
         return (
-            <div className="relative w-full h-64">
-                <canvas id="chart" ref={this.chartRef} className='pb-4'></canvas>
+            <div className="relative w-full max-h-72 lg:max-h-80 2xl:max-h-96">
+                <canvas id="chart" ref={this.chartRef}></canvas>
             </div>
         )
     }

@@ -6,6 +6,7 @@ import { createBrowserHistory } from 'history';
 import Dashboard from './pages/dashboard/dashboard';
 import Login from './pages/login/login';
 import ActionBar from './components/ActionBar/ActionBar';
+import MobileNav from './components/NavBar/MobileNav';
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
     <div className="flex flex-row relative">
       <Router history={history}>
         <NavBar />
-        <ActionBar />
+        <MobileNav />
+        {/* <ActionBar /> */}
         <Switch>
           <Route exact path="/">
             <Login />

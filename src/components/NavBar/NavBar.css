@@ -1,5 +1,5 @@
 .nav-item {
-    @apply py-2.5 px-7 flex;
+    @apply py-2.5 flex;
 }
 
 .nav-item>a {
@@ -7,9 +7,14 @@
 }
 
 .nav-container {
-    width: 170px;
+    width: 145px;
     font-family: 'Poppins', sans-serif;
     @apply text-sm;
+}
+@media (min-width: 640px) {
+    .nav-container {
+        width: 170px;
+    }
 }
 
 .nav-item-active {
