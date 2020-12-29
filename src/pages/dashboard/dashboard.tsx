@@ -77,7 +77,7 @@ export const Dashboard = () => {
               <div className="lg:row-start-1">
                 <div className="flex justify-between items-end mb-5">
                   <h2 className="text-xl">Expenses</h2>
-                  <a href='#' className="text-green-500 text-xs cursor-pointer hover:underline">View Expenses</a>
+                  <a href='#' className="text-green-500 text-xs cursor-pointer hover:underline mr-2">View Expenses</a>
                 </div>
                   <Card padding="px-4 pt-5">
                     <div className="flex ml-2 mr-2 justify-between pb-4 md:pb-8 2xl:pb-10">
@@ -90,7 +90,7 @@ export const Dashboard = () => {
               <div className='row-start-2 lg:row-start-1'>
                 <div className="flex justify-between items-end mb-5">
                   <h2 className="text-xl">Deadlines</h2>
-                  <a href='#' className="text-green-500 text-xs cursor-pointer hover:underline">View Deadlines</a>
+                  <a href='#' className="text-green-500 text-xs cursor-pointer hover:underline mr-2">View Deadlines</a>
                 </div>
                 <Card padding="pr-4 pt-5 pl-6">
                   <Todo />
@@ -99,7 +99,7 @@ export const Dashboard = () => {
               <div className="lg:col-span-2">
               <div className="flex justify-between items-end mb-5">
                   <h2 className="text-xl">Overdue</h2>
-                  <a href='#' className="text-green-500 text-xs cursor-pointer hover:underline">View Overdue Invoices</a>
+                  <a href='#' className="text-green-500 text-xs cursor-pointer hover:underline mr-2">View Overdue Invoices</a>
                 </div>
                 <Table />
               </div>
