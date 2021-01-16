@@ -7,13 +7,13 @@ import Login from './pages/login/login';
 import ActionBar from './components/ActionBar/ActionBar';
 import MobileNav from './components/NavBar/MobileNav';
 
-interface User {
+type User = {
   id: number;
-}
+} | null
 interface INavRoute {
   exact?: boolean,
   path: string, 
-  user: User | null
+  user: User
   component: ElementType
 }
 interface IGuardedRoute {
@@ -30,11 +30,12 @@ const GuardedRoute = ({ component, auth, ...rest }: IGuardedRoute) => (
   )} />
 )
 
-const NavRoute= ({user, exact, path, component, ...props}: INavRoute) => {
+const NavRoute= ({user, exact, path, component}: INavRoute) => {
   return (
-    <GuardedRoute auth={!!user} exact={exact} path={path} component={() =>  (
+    <GuardedRoute auth={!!user} exact={exact} path={path} component={(props) =>  (
       <div className='flex flex-row relative'>
         <NavBar />
+        <ActionBar />
         <MobileNav />
         { React.createElement(component, props) }
       </div>   
@@ -42,11 +43,9 @@ const NavRoute= ({user, exact, path, component, ...props}: INavRoute) => {
   )
 }
 const LoginRoute = () => (
-  <div>
-    <Route exact path="/">
-      <Route exact path="/" render={() => <Redirect to="login" /> } />
-      <Route path="/login" component={Login} />
-    </Route>
+  <div className='h-full'>
+    <Route exact path="/" render={() => <Redirect to="login" /> } />
+    <Route path="/login" component={Login} />
   </div>
 )
 
@@ -57,8 +56,6 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/(login)?" component={LoginRoute}/>
-        <Route path="/register" component={Login} />
-        <NavRoute user={user2} path='/clients' component={Login}/>
         <NavRoute user={user}path='/dashboard' component={Dashboard}/>
       </Switch>
     </BrowserRouter>

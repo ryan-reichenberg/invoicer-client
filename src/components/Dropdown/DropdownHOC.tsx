@@ -2,7 +2,7 @@ import React, { ElementType, SyntheticEvent } from "react";
 
 
 export interface IToggleComponentProps  {
-    toggleComponent: ElementType,
+    component: ElementType,
     onSelect?: (event: SyntheticEvent<any, Event>) => void,
     onToggle?: () => void,
     onClick?: () => void,
@@ -19,14 +19,14 @@ export interface IDropdownItem  {
 
 interface Props {
     data: (IDropdownItem | IDropdownLinkItem)[]
-    toggleComponent: ElementType
+    component: ElementType
     onSelect?: (event: SyntheticEvent<any, Event>) => void
     
 }
 interface State {
     isOpen: boolean,  
 }
-// Not sure if HOC is needed
+// Tech debt: Not sure if HOC is needed
 export const withDropdown = <P extends IToggleComponentProps>(
     Component: React.ComponentType<P>
   ) =>
