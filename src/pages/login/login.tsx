@@ -5,6 +5,7 @@ import apple from '../../assets/apple-original.svg'
 import google from '../../assets/google-original.svg'
 import facebook from '../../assets/facebook-original.svg'
 import './login.css'
+import { Link } from 'react-router-dom'
 const Login = () => {
     return (
         <div className="flex items-center justify-center h-full text-gray-600">
@@ -55,7 +56,7 @@ const Login = () => {
                                 </button>
                             </div>
 
-                            <p className='text-xs text-center mt-12'>Don't have an account? <span className='text-green-500 cursor-pointer hover:underline ml-1'>Sign up</span></p>
+                            <p className='text-xs text-center mt-12'>Don't have an account? <Link to={"/register"} className='text-green-500 cursor-pointer hover:underline ml-1'>Sign up</Link></p>
                         </div>
                         
                     </div>

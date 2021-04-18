@@ -1,11 +1,12 @@
 import React, { ElementType } from 'react';
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from '../components/NavBar/NavBar';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import Dashboard from './pages/dashboard/dashboard';
-import Login from './pages/login/login';
-import ActionBar from './components/ActionBar/ActionBar';
-import MobileNav from './components/NavBar/MobileNav';
+import Dashboard from '../pages/dashboard/dashboard';
+import Login from '../pages/login/login';
+import ActionBar from '../components/ActionBar/ActionBar';
+import MobileNav from '../components/NavBar/MobileNav';
+import { Register } from '../pages/register/register';
 
 type User = {
   id: number;
@@ -42,20 +43,20 @@ const NavRoute= ({user, exact, path, component}: INavRoute) => {
     )}/>
   )
 }
-const LoginRoute = () => (
+const AuthenticationRoutes = () => (
   <div className='h-full'>
     <Route exact path="/" render={() => <Redirect to="login" /> } />
     <Route path="/login" component={Login} />
+    <Route path="/register" component={Register} />
   </div>
 )
 
 function App() {
   let user = {id:121}
-  let user2 = null;
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/(login)?" component={LoginRoute}/>
+        <Route exact path="/(login|register)?" component={AuthenticationRoutes}/>
         <NavRoute user={user}path='/dashboard' component={Dashboard}/>
       </Switch>
     </BrowserRouter>

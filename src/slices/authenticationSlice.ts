@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AppThunk } from "src/utils/store";
+import { AppThunk } from "src/app/store";
 import  * as userService from 'src/services/user-service';
 interface AuthenticationState {
     isLoading:  boolean,
